@@ -1,0 +1,68 @@
+((("private" .
+   [0 0 0 0 1 0 0])
+  ("protected" .
+   [0 0 0 0 1 0 0 0 0])
+  ("inc" .
+   [1 0 0])
+  ("my-objc-mode-setup" .
+   [0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0])
+  ("objc-mode-hook" .
+   [0 0 0 1 0 0 0 0 0 0 0 0 0 0])
+  ("my-ac-cc-mode-setup" .
+   [0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0])
+  ("c-mode-common-hook" .
+   [0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 0])
+  ("add-hook" .
+   [0 0 0 0 1 0 1 0])
+  ("ac-source-yasnippet" .
+   [0 0 0 0 0 0 0 0 0 0 0 2 0 0 0 0 0 0 0])
+  ("append" .
+   [1 0 0 0 1 0])
+  ("ac-sources" .
+   [0 0 0 0 2 0 1 1 0 0])
+  ("defun" .
+   [2 0 0 1 1])
+  ("ac-quick-help-delay" .
+   [0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 0 0])
+  ("ac-auto-start" .
+   [0 0 0 0 0 0 0 1 0 0 0 0 0])
+  ("auto-complete-clang" .
+   [0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0])
+  ("init-path" .
+   [0 0 0 0 0 0 1 0 0])
+  ("require" .
+   [0 0 0 2 0 0 0])
+  ("string" .
+   [1 0 0 0 0 0])
+  ("main" .
+   [2 0 0 0])
+  ("namespace" .
+   [0 0 0 0 1 0 0 0 0])
+  ("include" .
+   [0 0 0 1 1 0 0])
+  ("inline" .
+   [0 0 1 0 0 0])
+  ("add-to-list" .
+   [0 0 0 0 0 0 0 0 0 0 1])
+  ("setq" .
+   [6 0 0 0])
+  ("setq-default" .
+   [0 0 0 0 0 0 1 0 0 0 0 0])
+  ("provide" .
+   [0 0 0 0 0 1 0])
+  ("url-proxy-services" .
+   [0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0])
+  ("webViewDidStartLoad" .
+   [0 0 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0])
+  ("xcode:run" .
+   [0 0 0 0 0 0 1 0 0])
+  ("message" .
+   [1 0 0 0 1 0 0])
+  ("concat" .
+   [1 0 0 0 1 0])
+  ("xcode--project-root" .
+   [0 0 0 0 0 0 0 0 0 1 1 0 0 0 0 0 0 0 0])
+  ("lldb" .
+   [1 0 0 0])
+  ("dframe-with-attached-buffer" .
+   [1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0])))

@@ -1,0 +1,29 @@
+exit
+cd /
+ls
+ln --help
+ln -s /usr/local/bin/w3m /usr/bin/w3m
+sudo ln -s /usr/local/bin/w3m /usr/bin/w3m
+ls
+lldb --arch x86_64 a.cpp 
+clang --help
+clang ~/a.cpp  -S -emit-llvm -o -
+ls
+ls -al
+clang a.cpp
+ls
+lldb 
+lldb a.out
+rm a.out
+clang -g a.cpp 
+ls
+lldb a.out
+rm -r a.out.dSYM
+rm a.out
+ls
+rm a.cpp\~
+ls
+clang -g a.cpp 
+ls
+lldb a.out
+exit

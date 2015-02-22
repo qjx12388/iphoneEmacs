@@ -1,0 +1,6 @@
+;;ecb config
+(add-to-list 'load-path "~/.emacs.d/elpa/ecb-2.40")
+
+(require 'ecb)
+(setq stack-trace-on-error t)
+(provide 'init-ecb)
