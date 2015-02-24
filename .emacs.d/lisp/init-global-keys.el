@@ -1,6 +1,6 @@
 ;;Here’s my Emacs config for setting up pragma-marks
 ;;So whenever I am editing a source code file and I press Ctrl-x p here’s what I see in a separate buffer
-(global-set-key "\C-xp" 'objc-headline)
+;;(global-set-key "\C-xp" 'objc-headline)
 
 
 ;; --- Obj-C switch between header and source ---
@@ -24,7 +24,9 @@
     (objc-jump-to-extension "h")))
 
 (defun objc-mode-customizations ()
-  (define-key objc-mode-map (kbd "C-c t") 'objc-jump-between-header-source))
+  (define-key objc-mode-map (kbd "C-c t") 'objc-jump-between-header-source)
+  (define-key objc-mode-map (kbd "C-x p") 'objc-headline)
+  )
 
 (add-hook 'objc-mode-hook 'objc-mode-customizations)
 
@@ -120,7 +122,7 @@
 
 
 ;;Xcode编译、执行，通过applescript
-(defun xcode:build()
+(defun xcode:simulatorbuild()
   (interactive)
 ;;  (do-applescript
 ;;   (format
@@ -133,14 +135,42 @@
 ;;     "end tell \r"
   ;;     ))))
 
-  (message(shell-command-to-string (concat "cd " (xcode--project-root) "; xcodebuild -sdk iphonesimulator8.1 -toolchain \"iPhone Developer\" -configuration Debug")))
+  (message(shell-command-to-string (concat "cd "(xcode--project-root)";xcodebuild -sdk iphonesimulator8.1 -toolchain \"iPhone Developer\" -configuration Debug")))
   )
 
-(defun xcode:run()
+(defun xcode:simulatorrun()
   (interactive)
-  (message(shell-command-to-string (concat "ios-sim launch "(xcode--project-root) "/build/Debug-iphonesimulator/hebtp.app --devicetypeid \"com.apple.CoreSimulator.SimDeviceType.iPhone-4s, 8.1\"")))
+  (message
+   (do-applescript
+    (format
+     (concat
+      "tell application \"Terminal\" \r"
+      "activate \r"
+        "tell window 1 \r "
+        "activate \r"
+	"do script \"ios-sim launch "(xcode--project-root)"/build/Debug-iphonesimulator/hebtp.app --debug"
+	" --devicetypeid 'com.apple.CoreSimulator.SimDeviceType.iPhone-4s, 8.1'"
+	" \" \r"
+	"end tell \r"
+      "end tell \r"
+      )
+    )
+    )
+   )
  )
 
+(defun xcode:devicerun()
+  (interactive)
+  (message(shell-command-to-string (concat "fruitstrap -d -b "(xcode--project-root) "/build/Release-iphoneos/hebtp.app")))
+  )
+
+(defun xcode:devicebuild()
+  (interactive)
+  (message(shell-command-to-string (concat "cd "(xcode--project-root)";xcodebuild -sdk iphoneos build"
+					   ;;"-toolchain \"iPhone Developer\""
+					   ;;"-configuration Debug"
+					   )))
+ )
 
 (defvar *xcode-project-root* nil)
 
@@ -164,7 +194,7 @@
   (concat "cd " (xcode--project-root) "; " options))
 
 (defun xcode/build-compile ()
-  (interactive)
+;;  (interactive)
   (compile (xcode--project-command (xcode--build-command))))
 
 (defun xcode/build-list-sdks ()
@@ -186,9 +216,12 @@
 ;;绑定快捷键，xcode－－－编译和执行
 (add-hook 'objc-mode-hook
 	  (lambda ()
-	     (define-key objc-mode-map (kbd "s-b") 'xcode:build)
-	     (define-key objc-mode-map (kbd "s-r") 'xcode:run)
+	     (define-key objc-mode-map (kbd "s-b") 'xcode:simulatorbuild)
+	     (define-key objc-mode-map (kbd "s-r") 'xcode:simulatorrun)
 	            )) 
 
+
+;;linear-undo config
+(global-set-key "\C-xr" 'redo)
 
 (provide 'init-global-keys)

@@ -27,3 +27,5 @@ clang -g a.cpp
 ls
 lldb a.out
 exit
+ls
+Base.lproj                     JdccxResult.h                    ResourceContainer.h        TjzrViewController.h            XxdlViewController.m

@@ -56,3 +56,6 @@
 
 ;;lldb config
 (require 'init-gud-lldb)
+
+;;linear-undo config
+(require 'init-linear-redo)
