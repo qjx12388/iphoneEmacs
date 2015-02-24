@@ -60,6 +60,13 @@ ont-lock\\)")
 (require 'init-cedet)
 (require 'init-ecb)
 (require 'ecb-autoloads)
-
+;;默认打开scratch buffer                                                        
+(switch-to-buffer "*scratch*")                                                  
+(delete-other-windows)                                                          
+(setq inhibit-startup-screen t)                                                 
+;删除minibuffer的重复历史                                                       
+(setq history-delete-duplicates t)                                              
+;自动更新buffer                                                                 
+(setq auto-revert-mode 1)                                                       
 
 (provide 'init-env)
