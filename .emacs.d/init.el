@@ -46,7 +46,7 @@
 (require 'init-env) 
 
 ;;init helm-gtags
-(require 'init-helm-gtags)
+;;(require 'init-helm-gtags)
 
 
 ;; init-global-keys
@@ -58,3 +58,11 @@
 ;;linear-undo config
 (require 'init-linear-redo)
 
+;;gtags config
+;;(require 'init-gtags)
+;;(gtags-mode 1)
+
+;;(require 'init-ggtags)
+
+;;etags config
+(require 'init-helm-etags-plus)

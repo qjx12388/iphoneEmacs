@@ -64,9 +64,9 @@ ont-lock\\)")
 (switch-to-buffer "*scratch*")                                                  
 (delete-other-windows)                                                          
 (setq inhibit-startup-screen t)                                                 
-;删除minibuffer的重复历史                                                       
+;;删除minibuffer的重复历史                                                       
 (setq history-delete-duplicates t)                                              
-;自动更新buffer                                                                 
-(setq auto-revert-mode 1)                                                       
+;;自动更新buffer                                                                 
+(setq auto-revert-mode 1)
 
 (provide 'init-env)

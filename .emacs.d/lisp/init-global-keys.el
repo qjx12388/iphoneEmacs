@@ -101,26 +101,6 @@
  ;; If there is more than one, they won't work right.
   )
 
-
-;;helm-gtags config
-(setq helm-gtags-ignore-case t
-      helm-gtags-auto-update t
-      helm-gtags-use-input-at-cursor t
-      helm-gtags-pulse-at-cursor t
-      helm-gtags-suggested-key-mapping t)
-(defun set-helm-gtags-keybindings ()
-  (define-key helm-gtags-mode-map (kbd "C-c i") 'helm-gtags-tags-in-this-function)
-  (define-key helm-gtags-mode-map (kbd "C-c r") 'helm-gtags-find-rtag)
-  (define-key helm-gtags-mode-map (kbd "C-c a") 'helm-gtags-select)
-  (define-key helm-gtags-mode-map (kbd "M-."    ) 'helm-gtags-dwim)
-  (define-key helm-gtags-mode-map (kbd "M-,"    ) 'helm-gtags-pop-stack);;back to last place
-  (define-key helm-gtags-mode-map (kbd "C-c p") 'helm-gtags-previous-history)
-  (define-key helm-gtags-mode-map (kbd "C-c n") 'helm-gtags-next-history)
-  (define-key helm-gtags-mode-map (kbd "C-c f") 'helm-gtags-find-files);;查找文件
-  )
-(add-hook 'helm-gtags-mode-hook 'set-helm-gtags-keybindings)
-
-
 ;;Xcode编译、执行，通过applescript
 (defun xcode:simulatorbuild()
   (interactive)
@@ -223,5 +203,8 @@
 
 ;;linear-undo config
 (global-set-key "\C-xr" 'redo)
+
+;;gtags-mode config
+;;(add-hook 'objc-mode-hook 'gtags-mode)
 
 (provide 'init-global-keys)

@@ -29,3 +29,71 @@ lldb a.out
 exit
 ls
 Base.lproj                     JdccxResult.h                    ResourceContainer.h        TjzrViewController.h            XxdlViewController.m
+gtags --help
+global
+cd work/ios/apple/hebtp/hebtp
+ls
+global
+ln -s /usr/local/bin/global /usr/bin/global
+sudo ln -s /usr/local/bin/global /usr/bin/global
+global -u
+ls
+rm #*
+rm
+open .
+global -u
+ls
+global
+gtags
+exit
+gtags-cscope add GTAGS 
+ls
+cd inc/
+ls
+global -u
+cd ../QQ/
+global -u
+cd ../zh-Hans.lproj/
+ls
+global -u
+cd ../mapapi.bundle/
+global -u
+cd ../libs/
+global -u
+cd ../Images.xcassets/
+global -u
+cd ../Images/
+global -u
+cd ../icon/
+global -u
+cd ../en.lproj/
+global -u
+cd ../Base.lproj/
+global -u
+cd ../ASIHTTPRequest/
+global -u
+ls
+global -u
+ls
+cd ~/Desktop/
+ls
+cd gist7314772-744d75d82223db767967e5c8ac29a3a4481d5e5b/
+ls
+ls -al
+chmod u+x gctags 
+ls
+ls -al
+chmod a+x gctags 
+ls
+ls -al
+gctags
+ls
+ls -al
+touch Utils.m
+ls
+chmod a+wrx Utils.m 
+ls
+ls
+ls
+ls -al
+open .
