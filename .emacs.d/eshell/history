@@ -97,3 +97,8 @@ ls
 ls
 ls -al
 open .
+cd ../../
+ls
+cd hebtp/
+ls
+open .

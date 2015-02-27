@@ -55,11 +55,18 @@ ont-lock\\)")
 ;;powerline
 (require 'powerline)
 
-;;(require 'init-dired+)
+;;(require 'init-dired+)			
+
+;;cl-lib config
+(require 'init-cl-lib)
+
+;;async config
+(require 'init-async)
 
 (require 'init-cedet)
 (require 'init-ecb)
-(require 'ecb-autoloads)
+
+
 ;;默认打开scratch buffer                                                        
 (switch-to-buffer "*scratch*")                                                  
 (delete-other-windows)                                                          

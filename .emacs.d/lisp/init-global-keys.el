@@ -114,8 +114,7 @@
 ;;     "    end tell \r"
 ;;     "end tell \r"
   ;;     ))))
-
-  (message(shell-command-to-string (concat "cd "(xcode--project-root)";xcodebuild -sdk iphonesimulator8.1 -toolchain \"iPhone Developer\" -configuration Debug")))
+  (message(shell-command-to-string (concat "cd "(xcode--project-root)";xcodebuild -sdk iphonesimulator8.1 -toolchain \"iPhone Developer: Quanfeng Li (FQ4XV6GRU9)\" -configuration Debug")))
   )
 
 (defun xcode:simulatorrun()
@@ -138,6 +137,12 @@
     )
    )
  )
+
+(defun xcode:simulatorClean()
+  (interactive)
+  (message
+   (shell-command-to-string (concat "cd " (xcode--project-root)"; xcodebuild clean -sdk iphonesimulator8.1 -configuration Debug")))
+  )
 
 (defun xcode:devicerun()
   (interactive)
@@ -196,15 +201,30 @@
 ;;绑定快捷键，xcode－－－编译和执行
 (add-hook 'objc-mode-hook
 	  (lambda ()
+	    ;;compile and debug ios config
 	     (define-key objc-mode-map (kbd "s-b") 'xcode:simulatorbuild)
 	     (define-key objc-mode-map (kbd "s-r") 'xcode:simulatorrun)
-	            )) 
+	     (define-key objc-mode-map (kbd "s-<backspace>") 'xcode:simulatorClean)
+	     ;;comment config
+	     (define-key objc-mode-map (kbd "M-;") 'comment-or-uncomment-region)
+	     (define-key objc-mode-map (kbd "C-u M-;") 'comment-kill)
+	     (define-key objc-mode-map (kbd "C-x ;") 'comment-set-column)
+	     (define-key objc-mode-map (kbd "M-j") 'comment-indent-new-line)
+	     (define-key global-map (kbd "C-c C-b") nil)
+	     (define-key objc-mode-map (kbd "C-c C-b") 'comment-box)
+
+	     ))
 
 
 ;;linear-undo config
 (global-set-key "\C-xr" 'redo)
 
-;;gtags-mode config
-;;(add-hook 'objc-mode-hook 'gtags-mode)
+;;从后向前删除
+(global-set-key (kbd "C-h") 'delete-backward-char)
+(global-set-key (kbd "M-h") 'backward-kill-word)
+
+;;标记整段
+(global-set-key (kbd "M-p") 'mark-paragraph)
+
 
 (provide 'init-global-keys)

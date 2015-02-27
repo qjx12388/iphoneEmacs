@@ -1,20 +1,76 @@
-((("cache" .
-   [4 0 2 0 0])
-  ("paths" .
+((("async" .
    [1 0 0 0 0])
-  ("if" .
-   [1 0])
-  ("ASIDownloadCache" .
-   [1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0])
-  ("add-to-list" .
-   [0 0 0 0 0 0 1 0 0 1 0])
-  ("load-path" .
-   [0 0 0 0 1 0 0 1 0])
-  ("require" .
-   [0 0 1 1 0 0 0])
+  ("load" .
+   [1 0 0 0])
+  ("config-changed-event" .
+   [0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0])
+  ("message" .
+   [0 0 0 0 1 1 0])
+  ("cl-lib" .
+   [0 0 2 0 0 0])
+  ("provide" .
+   [0 0 0 0 0 3 0])
   ("ggtags" .
    [0 0 0 1 0 0])
-  ("provide" .
-   [0 0 0 0 0 1 0])
-  ("cl-lib" .
-   [0 0 1 0 0 0])))
+  ("require" .
+   [0 0 1 6 0 0 0])
+  ("load-path" .
+   [0 0 0 0 2 1 0 1 0])
+  ("add-to-list" .
+   [0 0 0 0 0 0 3 0 0 1 0])
+  ("ASIDownloadCache" .
+   [1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0])
+  ("if" .
+   [1 0])
+  ("paths" .
+   [1 0 0 0 0])
+  ("cache" .
+   [4 0 2 0 0])
+  ("defun" .
+   [1 0 0 0 0])
+  ("Xcode" .
+   [0 0 0 1 0])
+  ("xcode:simulatorrun" .
+   [0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0])
+  ("interactive" .
+   [0 0 0 0 0 0 0 1 0 0 0])
+  ("shell-command-to-string" .
+   [0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 0 0])
+  ("concat" .
+   [1 0 0 0 0 0])
+  ("xcode--project-root" .
+   [0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 0])
+  ("xcode:simulatorClean" .
+   [0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 0 1])
+  ("backspace" .
+   [0 0 0 0 0 1 1 0 0])
+  ("delete" .
+   [1 0 0 0 0 0])
+  ("command" .
+   [1 0 0 0 0 0 0])
+  ("kbd" .
+   [2 0 0])
+  ("autoload" .
+   [0 0 0 0 1 0 0 0])
+  ("define-key" .
+   [0 0 0 0 0 1 0 0 0 0])
+  ("global-map" .
+   [0 0 0 0 0 0 1 0 0 0])
+  ("nil" .
+   [1 0 0])
+  ("objc-mode-map" .
+   [0 0 0 0 0 0 0 1 0 0 0 0 0])
+  ("dsafd" .
+   [3 0 0 3 5])
+  ("dsfad" .
+   [0 0 0 0 1])
+  ("asdf" .
+   [0 0 0 1])
+  ("dsafdsadf" .
+   [0 0 0 0 0 0 1 0 0])
+  ("sdafds" .
+   [0 0 0 0 2 0])
+  ("init-cl-lib" .
+   [0 0 0 0 0 0 0 1 0 0 0])
+  ("load-file" .
+   [0 0 0 0 0 0 1 0 0])))

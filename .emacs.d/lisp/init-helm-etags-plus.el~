@@ -1,3 +1,0 @@
-;;helm-etags+.el config
-(add-to-list 'load-path "~/.emacs.d/elpa/helm-etags-plus")
-(require 'helm-etags+)
