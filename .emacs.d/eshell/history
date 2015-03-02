@@ -1,104 +1,10 @@
-exit
-cd /
 ls
-ln --help
-ln -s /usr/local/bin/w3m /usr/bin/w3m
-sudo ln -s /usr/local/bin/w3m /usr/bin/w3m
+cd .emacs.d/elpa/cedet/
 ls
-lldb --arch x86_64 a.cpp 
-clang --help
-clang ~/a.cpp  -S -emit-llvm -o -
+cd ..
 ls
-ls -al
-clang a.cpp
+cd cedet/
 ls
-lldb 
-lldb a.out
-rm a.out
-clang -g a.cpp 
+cd etc/
 ls
-lldb a.out
-rm -r a.out.dSYM
-rm a.out
-ls
-rm a.cpp\~
-ls
-clang -g a.cpp 
-ls
-lldb a.out
-exit
-ls
-Base.lproj                     JdccxResult.h                    ResourceContainer.h        TjzrViewController.h            XxdlViewController.m
-gtags --help
-global
-cd work/ios/apple/hebtp/hebtp
-ls
-global
-ln -s /usr/local/bin/global /usr/bin/global
-sudo ln -s /usr/local/bin/global /usr/bin/global
-global -u
-ls
-rm #*
-rm
-open .
-global -u
-ls
-global
-gtags
-exit
-gtags-cscope add GTAGS 
-ls
-cd inc/
-ls
-global -u
-cd ../QQ/
-global -u
-cd ../zh-Hans.lproj/
-ls
-global -u
-cd ../mapapi.bundle/
-global -u
-cd ../libs/
-global -u
-cd ../Images.xcassets/
-global -u
-cd ../Images/
-global -u
-cd ../icon/
-global -u
-cd ../en.lproj/
-global -u
-cd ../Base.lproj/
-global -u
-cd ../ASIHTTPRequest/
-global -u
-ls
-global -u
-ls
-cd ~/Desktop/
-ls
-cd gist7314772-744d75d82223db767967e5c8ac29a3a4481d5e5b/
-ls
-ls -al
-chmod u+x gctags 
-ls
-ls -al
-chmod a+x gctags 
-ls
-ls -al
-gctags
-ls
-ls -al
-touch Utils.m
-ls
-chmod a+wrx Utils.m 
-ls
-ls
-ls
-ls -al
-open .
-cd ../../
-ls
-cd hebtp/
-ls
-open .
+mv semantic semantic1

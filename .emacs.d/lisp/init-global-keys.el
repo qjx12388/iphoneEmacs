@@ -13,14 +13,26 @@
   (let* ((filename (buffer-file-name))
 	 (file-components (append (butlast (split-string filename
 							 "\\."))
-				  (list extension))))
-    (find-file (mapconcat 'identity file-components "."))))
+				  (list extension)))
+;;        (find-file (mapconcat 'identity file-components "."))))
+    (filepath (mapconcat 'identity file-components ".")))
+  (if (file-readable-p filepath)
+      (find-file filepath)
+    nil
+      )))
+
 
 ;;; Assumes that Header and Source file are in same directory
 (defun objc-jump-between-header-source ()
   (interactive)
   (if (objc-in-header-file)
-      (objc-jump-to-extension "m")
+      (or
+       (objc-jump-to-extension "m")
+       (objc-jump-to-extension "mm")
+       (objc-jump-to-extension "c")
+       (objc-jump-to-extension "cc")
+       (objc-jump-to-extension "cpp")
+       )
     (objc-jump-to-extension "h")))
 
 (defun objc-mode-customizations ()
@@ -30,76 +42,6 @@
 
 (add-hook 'objc-mode-hook 'objc-mode-customizations)
 
-
-
-;;ecb-activate mode keys
-
-(custom-set-variables
- ;; custom-set-variables was added by Custom.
- ;; If you edit it by hand, you could mess it up, so be careful.
- ;; Your init file should contain only one such instance.
- ;; If there is more than one, they won't work right.
- '(ecb-key-map
-   (quote
-    ("C-c ."
-     (t "fh" ecb-history-filter)
-     (t "fs" ecb-sources-filter)
-     (t "fm" ecb-methods-filter)
-     (t "fr" ecb-methods-filter-regexp)
-     (t "ft" ecb-methods-filter-tagclass)
-     (t "fc" ecb-methods-filter-current-type)
-     (t "fp" ecb-methods-filter-protection)
-     (t "fn" ecb-methods-filter-nofilter)
-     (t "fl" ecb-methods-filter-delete-last)
-     (t "ff" ecb-methods-filter-function)
-     (t "p" ecb-nav-goto-previous)
-     (t "n" ecb-nav-goto-next)
-     (t "lc" ecb-change-layout)
-     (t "lr" ecb-redraw-layout)
-     (t "lw" ecb-toggle-ecb-windows)
-     (t "lt" ecb-toggle-layout)
-     (t "s" ecb-window-sync)
-     (t "r" ecb-rebuild-methods-buffer)
-     (t "a" ecb-toggle-auto-expand-tag-tree)
-     (t "x" ecb-expand-methods-nodes)
-     (t "h" ecb-show-help)
-     (t "gl" ecb-goto-window-edit-last)
-     (nil "C-c 1" ecb-goto-window-edit1)
-     (nil "C-c 2" ecb-goto-window-edit2)
-     (t "gc" ecb-goto-window-compilation)
-     (nil "C-c d" ecb-goto-window-directories)
-     (nil "C-c s" ecb-goto-window-sources)
-     (nil "C-c m" ecb-goto-window-methods)
-     (nil "C-c h" ecb-goto-window-history)
-     (t "ga" ecb-goto-window-analyse)
-     (t "gb" ecb-goto-window-speedbar)
-     (t "md" ecb-maximize-window-directories)
-     (t "ms" ecb-maximize-window-sources)
-     (t "mm" ecb-maximize-window-methods)
-     (t "mh" ecb-maximize-window-history)
-     (t "ma" ecb-maximize-window-analyse)
-     (t "mb" ecb-maximize-window-speedbar)
-     (t "e" eshell)
-     (t "o" ecb-toggle-scroll-other-window-scrolls-compile)
-     (t "\\" ecb-toggle-compile-window)
-     (t "/" ecb-toggle-compile-window-height)
-     (t "," ecb-cycle-maximized-ecb-buffers)
-     (t "." ecb-cycle-through-compilation-buffers))))
- '(ecb-layout-window-sizes
-   (quote
-    (("left8"
-      (ecb-directories-buffer-name 0.22033898305084745 . 0.29411764705882354)
-      (ecb-sources-buffer-name 0.220338983050847¯45 . 0.23529411764705882)
-      (ecb-methods-buffer-name 0.22033898305084745 . 0.29411764705882354)
-      (ecb-history-buffer-name 0.22033898305084745 . 0.16176470588235295)))))
- '(ecb-options-version "2.40")
- '(send-mail-function (quote smtpmail-send-it)))
-(custom-set-faces
- ;; custom-set-faces was added by Custom.
- ;; If you edit it by hand, you could mess it up, so be careful.
- ;; Your init file should contain only one such instance.
- ;; If there is more than one, they won't work right.
-  )
 
 ;;Xcode编译、执行，通过applescript
 (defun xcode:simulatorbuild()
@@ -216,6 +158,7 @@
 	     ))
 
 
+
 ;;linear-undo config
 (global-set-key "\C-xr" 'redo)
 
@@ -226,5 +169,19 @@
 ;;标记整段
 (global-set-key (kbd "M-p") 'mark-paragraph)
 
+
+;;semantic config
+;;control tab 智能提示
+;;(global-set-key [(control tab)] 'semantic-ia-complete-symbol-menu)
+
+;;new buffer and switch to it
+(defun xah-new-empty-buffer()
+  "Open a new empty buffer."
+  (interactive)
+  (let ((buf (generate-new-buffer "untitled")))
+    (switch-to-buffer buf)
+    (funcall (and initial-major-mode))
+        (setq buffer-offer-save t)))
+(global-set-key (kbd "M-n") 'xah-new-empty-buffer)
 
 (provide 'init-global-keys)

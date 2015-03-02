@@ -6,7 +6,6 @@
 
 ;;(require 'ecb-autoloads)
 
-
 ;;不显示每日提示
 (setq ecb-tip-of-the-day nil)
 (setq stack-trace-on-error t)

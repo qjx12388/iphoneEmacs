@@ -1,0 +1,9 @@
+;;gtags config
+(add-to-list 'load-path "~/.emacs.d/elpa/gtags-3.3")
+(require 'gtags)
+
+(setq gtags-suggested-key-mapping t)
+
+;;(gtags-mode 1)
+(add-hook 'objc-mode-hook 'gtags-mode)
+(provide 'init-gtags)

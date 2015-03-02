@@ -76,4 +76,16 @@ ont-lock\\)")
 ;;自动更新buffer                                                                 
 (setq auto-revert-mode 1)
 
+
+
+;;根据文件扩展名，加载相应模式
+;;(add-to-list 'auto-mode-alist '("\\.h\\'\\|\\.mm\\"'.objc-mode))
+(add-to-list 'auto-mode-alist '("\\.h\\'\\|\\.mm\\'" . objc-mode))
+
+;;proxy
+(setq url-proxy-services
+      '(("no_proxy" . "^\\(localhost\\|10.*\\)")
+	("http" . "127.0.0.1:8087")
+	     ("https" . "127.0.0.1:8087")))
+
 (provide 'init-env)

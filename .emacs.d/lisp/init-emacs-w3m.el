@@ -99,12 +99,12 @@
 ;;(require 'w3m-load)
 ;;(require 'mime-w3m)
 
-;; w3m proxy
-;;(setq w3m-command-arguments
+;; ;;w3m proxy
+;; (setq w3m-command-arguments
 ;;      (nconc w3m-command-arguments
-;;	     '("-o" "http_proxy=http://localhost:8087/"
-;;	       )
-;;	     ))
+;; 	     '("-o" "http_proxy=127.0.0.1:8087/"
+;; 	       )
+;; 	     ))
 
 ;;(setq url-proxy-services '(
 ;;			   ("http"."http://192.168.1.105:8086/proxy.pac")
