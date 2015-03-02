@@ -77,6 +77,15 @@
 ;;helm-etags-plus config
 ;;(require 'init-helm-etags-plus)
 
+;;config org
+(require 'init-org)
+
+
+;;highlight symbol config
+(require 'init-highlight-symbol)
+
+
+(require 'init-iedit)
 (setq idle-require-idle-delay 3)
 (setq idle-require-symbols '(
 			init-yasnippets
