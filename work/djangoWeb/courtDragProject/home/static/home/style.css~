@@ -1,0 +1,28 @@
+li a {
+    color: green;
+}
+#wrap{
+    width: 960px;
+    margin: 0 auto;
+    text-align: center;
+    overflow: hidden;
+    height: auto;
+}
+
+body #top{
+    Background:url("images/top.jpg") no-repeat fixed top;
+    width:959px;
+    height:189px;
+}
+
+#resultTitle{
+    text-align:left;
+}
+
+#indexTitle{
+    text-align:left;
+}
+#btnSearch{
+    float:right;
+    margin-right:160px;
+}

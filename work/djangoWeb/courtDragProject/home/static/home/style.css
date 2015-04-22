@@ -1,0 +1,53 @@
+li a {
+    color: green;
+}
+#wrap{
+    width: 960px;
+    margin: 0 auto;
+    text-align: center;
+    overflow: hidden;
+    height: auto;
+}
+
+body #top{
+    Background:url("images/top.jpg") no-repeat fixed top;
+    width:959px;
+    height:189px;
+}
+
+#resultTitle{
+    text-align:left;
+}
+
+#indexTitle{
+    text-align:left;
+}
+#btnSearch{
+    float:right;
+    margin-right:160px;
+}
+
+.tablestyle {
+WIDTH: 95%;
+FONT-SIZE: 13px;
+table-layout: fixed;
+}
+.tablestyle th {
+BACKGROUND-IMAGE: url(images/thbg.gif);
+BACKGROUND-REPEAT: repeat-x;
+HEIGHT: 30px;
+COLOR: #000000;
+FONT-SIZE: 13px;
+FONT-WEIGHT: bold;
+}
+
+.clsTRSNavigatorDIV {
+TEXT-ALIGN: center;
+MARGIN: 0px auto;
+WIDTH: 100%;
+FONT-FAMILY: tahoma,arial,'bitstream vera sans',helvetica,sans-serif,'';
+HEIGHT: 100%;
+COLOR: #007fbe;
+FONT-SIZE: 12px;
+OVERFLOW: hidden;
+}

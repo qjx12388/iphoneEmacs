@@ -1,0 +1,43 @@
+{% load staticfiles %}
+<html>
+  <title>pdf 文档下载程序</title>
+  <!--[if IE]>
+           <link rel="stylesheet" href="url" type="text/css" media="screen" />
+           <![endif]-->
+  <link rel="stylesheet" href="{% static 'home/style.css' %}" type="text/css" media="screen" />
+  <body>
+    <div id="wrap" >
+      <div id="top"></div>
+      <div id="indexTitle">中国裁判文书网pdf文档批量下载</div>
+      
+      <form action="{% url 'home:search' %}" method = "post">
+        {% csrf_token %}
+        
+        <br/><br/><br/>
+        
+      &nbsp; &nbsp; &nbsp; &nbsp;  <label>关键字：</label>
+        <input type="text" name="keyWord" value="" maxlength="100" size="100"></input><br/><br/>
+      &nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp; &nbsp;<label>案号：</label>
+        <input type="text" name="caseCode" value="" maxlength="100" size="40" ></input>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        <label>案由:</label>
+        <input type="text" name="wenshuanyou" value="" maxlength="100" size="40" ></input><br/><br/>
+        &nbsp; &nbsp; &nbsp; &nbsp; <label>案件类型：</label>
+        <select><option value="民事案件">民事案件</option><option>刑事案件</option><option>行政案件</option><option>知识产权</option><option>赔偿案件</option><option>执行案件</option></select>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        <label>文书类型：</label>
+        <select>
+          <option value="刑事裁定书">刑事裁定书</option><option>刑事判决书</option><option>刑事决定书</option>
+          <option>民事裁定书</option><option>民事判决书</option><option>民事决定书</option>
+          <option>行政裁定书</option><option>行政判决书</option><option>行政决定书</option>
+          <option>国家赔偿裁定书</option><option>国家赔偿判决书</option><option>国家赔偿决定书</option>
+          <option>执行判决书</option><option>执行决定书</option><option>执行裁定书</option>
+          <option>通知书</option>
+        </select><br/><br/>
+        &nbsp; &nbsp; <label>审理法院：</label>
+        <input type="text" name="court" value="" maxlength="100" size="100" ></input><br/><br/>
+        <label>审判时间：</label>
+        <label>到：</label><br/><br/>
+        <input id="btnSearch" type="submit" name="search" value="搜索" />
+      </form>
+    </div>
+  </body>
+</html>

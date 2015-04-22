@@ -1,0 +1,34 @@
+{% load staticfiles
+   import HTMLParser
+%}
+<html>
+  <head>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8"/>
+    <link rel="stylesheet" href="{% static 'home/style.css' %}" type="text/css" media="screen" />
+    <title>文档搜索列表</title>
+  </head>
+  <body>
+    <div id="wrap" >
+      <div id="top"></div>
+      <div id="resultTitle">搜索结果页：</div><input type="button" style="float:right" name="download" value="全部下载" />
+      <table class="tablestyle" cellspacing="1" cellpadding="0" align="center">
+              <tbody>
+                <tr>
+                  <th width="15"><input type="checkbox" /></th>
+                  <th width="40">序号</th>
+                  <th width="140" onclick="setOrder('court')">审理法院&nbsp;<span id="courtarrow" style="font-weight: normal;"></span></th>
+                  <th width="420" onclick="setOrder('doctitle')">标题&nbsp;<span id="doctitlearrow" style="font-weight: normal;"></span></th>
+                  <th width="190" style="cursor: pointer" onclick="setOrder('wenshuanhao')">案号&nbsp;<span id="wenshuanhaoarrow" style="font-weight: normal;"></span></th>
+                  <th width="90" onclick="setOrder('wenshuriqi')">裁判日期 &nbsp;<span id="wenshuriqiarrow" style="font-weight: normal;"></span></th>
+                  <th width="50">操作</th>
+                </tr>
+                {%if htmlContent%}
+                {{htmlContent}}
+                {%endif%}
+                
+              </tbody>
+      </table>
+      
+    </div>
+  </body>
+</html>

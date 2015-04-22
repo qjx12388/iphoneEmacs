@@ -1,0 +1,44 @@
+{% load staticfiles%}
+<html>
+  <head>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8"/>
+    <link rel="stylesheet" href="{% static 'home/style.css' %}" type="text/css" media="screen" />
+    <script type="text/javascript" src="{% static 'home/jquery-1.11.2.min.js' %}"></script>
+    <title>文档搜索列表</title>
+    <script type="text/javascript">
+      $(document).ready(function(){
+          $('#downloadAll').click(function(){
+              $.get('batchDownload')
+          })
+      })     
+    </script>
+  </head>
+  <body>
+    <div id="wrap" >
+      <div id="top"></div>
+      <div id="resultTitle">搜索结果页（如有法律纠纷，与开发者［或机构无关］）：</div>
+      <!--<input type="button" style="float:left;margin-left:750px" id="downloadSelect" name="downloadSelect" value="下载选中" />-->
+      <input type="button" style="float:right;margin-right:20px" id="downloadAll" name="downloadAll" value="全部下载" />
+      <table class="tablestyle" cellspacing="1" cellpadding="0" align="center">
+              <tbody>
+                <tr>
+<!--                  <th width="15"><input type="checkbox" id="checkBoxAll" /></th>-->
+                  <th width="40">序号</th>
+                  <th width="140" onclick="setOrder('court')">审理法院&nbsp;<span id="courtarrow" style="font-weight: normal;"></span></th>
+                  <th width="420" onclick="setOrder('doctitle')">标题&nbsp;<span id="doctitlearrow" style="font-weight: normal;"></span></th>
+                  <th width="190" style="cursor: pointer" onclick="setOrder('wenshuanhao')">案号&nbsp;<span id="wenshuanhaoarrow" style="font-weight: normal;"></span></th>
+                  <th width="90" onclick="setOrder('wenshuriqi')">裁判日期 &nbsp;<span id="wenshuriqiarrow" style="font-weight: normal;"></span></th>
+                  <th width="50">操作</th>
+                </tr>
+                {%if htmlContent%}
+                {%autoescape off%}
+                {{htmlContent}}
+                {%endautoescape%}
+                {%endif%}
+                
+              </tbody>
+      </table>
+      
+    </div>
+  </body>
+</html>
