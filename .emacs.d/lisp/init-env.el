@@ -88,4 +88,20 @@ ont-lock\\)")
 	("http" . "127.0.0.1:8087")
 	     ("https" . "127.0.0.1:8087")))
 
+
+;;将下面的设定添加到 .emacs.el 中，使用tab的距离为4个空白位。
+(add-hook 'c-mode-common-hook
+	  '(lambda()
+	     (c-set-style "cc-mode")))
+
+(setq-default indent-tabs-mode nil)
+(setq-default tab-width 4)
+
+
+
+;;使用 cua-mode 可以方便地实现代码中的矩形选择
+(setq cua-enable-cua-keys nil)
+(cua-mode t)
+
+
 (provide 'init-env)

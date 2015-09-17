@@ -8,31 +8,22 @@
 (defvar xcode:sdk (concat xcode:sdkpath "/SDKs/iPhoneSimulator" xcode:sdkver ".sdk"))
 ;(defvar flymake-objc-compiler (concat xcode:sdkpath "/usr/bin/gcc-" xcode:gccver))
 (defvar flymake-objc-compiler (concat xcode:sdkpath "/usr/bin/gcc"))
+
 (defvar flymake-objc-compile-default-options (list "-Wall" "-Wextra" "-fsyntax-only" "-ObjC" "-std=c99" "-isysroot" xcode:sdk))
 (defvar flymake-last-position nil)
-;;(defvar flymake-objc-compile-options '("-I."))
-
 (defvar flymake-objc-compile-options '("-I."))
-  ;; "Compile option for objc check."
-  ;;    :group 'flymake
-  ;;    :type '(repeat (string)))
-
 (defun flymake-objc-init ()
   (let* ((temp-file (flymake-init-create-temp-buffer-copy
                       'flymake-create-temp-inplace))
          (local-file (file-relative-name
                       temp-file
-                      (file-name-directory buffer-file-name)
-                      )
-
-                     ))
+                      (file-name-directory buffer-file-name))))
     (list flymake-objc-compiler (append flymake-objc-compile-default-options flymake-objc-compile-options (list local-file)))))
 
 (add-hook 'objc-mode-hook
          (lambda ()
            (push '("\\.m" flymake-objc-init) flymake-allowed-file-name-masks)
-           (push '("\\.mm" flymake-objc-init) flymake-allowed-file-name-masks)
-           (push '("\\.h" flymake-objc-init) flymake-allowed-file-name-masks)
+(push '("\\.h" flymake-objc-init) flymake-allowed-file-name-masks)
 (if (and (not (null buffer-file-name)) (file-writable-p buffer-file-name))
     (flymake-mode t))
     ))

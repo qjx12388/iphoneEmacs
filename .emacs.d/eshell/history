@@ -1,10 +1,128 @@
 ls
-cd .emacs.d/elpa/cedet/
+touch list.html
+ls
+mv list.html result.html
+exit
+ls
+touch timeout.html
 ls
 cd ..
 ls
-cd cedet/
+cd ..
 ls
-cd etc/
 ls
-mv semantic semantic1
+touch utils.py
+ls
+pwd
+ls
+rm utils.py*
+ls
+ls
+rm views.pyc
+ls
+cd ../../
+ls
+cd courtDragProject/
+ls
+cd home/
+ls
+cd templates/
+ls
+mv -r admin/ ../../
+mv admin/ ../../
+ls
+cd ../../
+ls
+cd admin/
+ls
+touch __init__.py
+ls
+touch widgets.py
+ls
+ls
+touch my-element.html
+ls
+touch ready-element.html
+ls
+touch name-tag.html
+ls
+cd elements/
+ls
+touch age-slider.html
+ls
+touch color-picker.html
+ls
+cd elements/
+ls
+touch editable-color-picker.html
+ls
+cp index.html index.bak.html
+ls
+ls
+cd .emacs.d
+ls
+cd elpa/
+ls
+exit
+ls
+cd .emacs.d
+ls
+cd elpa/
+ls
+cd ..
+ls
+cd ..
+ls
+cd .emacs.d
+ls
+cd lisp/
+ls
+touch init-js2-mode.el
+init-js2-mode.el
+ls
+e init-js2-mode.el 
+ls
+ls
+ls
+cd ..
+ls
+cd elpa/
+ls
+exit
+ls
+cd .emacs.d
+ls
+cd elpa/
+ls
+ls
+cd js2-mode-20150630.1336/
+ls
+ls
+cd .emacs.d
+ls
+cd elpa/
+ls
+rm *.txt
+ls
+cd rain
+cd rainbow-mode-0.11/
+ls
+cd ..
+ls
+cd ..
+ls
+cd lisp/
+ls
+touch init-rainbow-mode.el
+ls
+touch xjzfcDetail.html
+exit
+ls
+exit
+cd /Volumes/www/statics/css/jtxjz/
+ls
+touch xjzfcDetail.css
+ls
+rm xjzfcDetail.css 
+ls
+exit

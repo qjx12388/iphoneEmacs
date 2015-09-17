@@ -1,0 +1,5 @@
+;;config for flymake
+(add-to-list 'load-path "~/.emacs.d/elpa/emacs-flymake")
+(require 'flymake)
+
+(provide 'init-emacs-flymake)

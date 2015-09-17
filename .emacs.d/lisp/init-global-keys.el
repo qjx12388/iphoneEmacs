@@ -56,7 +56,7 @@
 ;;     "    end tell \r"
 ;;     "end tell \r"
   ;;     ))))
-  (message(shell-command-to-string (concat "cd "(xcode--project-root)";xcodebuild -sdk iphonesimulator8.1 -toolchain \"iPhone Developer: Quanfeng Li (FQ4XV6GRU9)\" -configuration Debug")))
+  (message(shell-command-to-string (concat "cd "(xcode--project-root)";xcodebuild -sdk iphonesimulator8.1 -configuration Debug")))
   )
 
 (defun xcode:simulatorrun()
@@ -93,10 +93,9 @@
 
 (defun xcode:devicebuild()
   (interactive)
-  (message(shell-command-to-string (concat "cd "(xcode--project-root)";xcodebuild -sdk iphoneos build"
-					   ;;"-toolchain \"iPhone Developer\""
-					   ;;"-configuration Debug"
-					   )))
+  (message
+   (shell-command-to-string (concat "cd " (xcode--project-root)"; xcodebuild build -sdk iphoneos8.1")))
+
  )
 
 (defvar *xcode-project-root* nil)

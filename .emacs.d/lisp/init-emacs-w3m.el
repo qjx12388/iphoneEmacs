@@ -20,17 +20,19 @@
 ;; show images in the browser
 ;(setq w3m-default-display-inline-images t)
 
-(setq w3m-search-default-engine "g")
+;;(setq w3m-search-default-engine "g")
+(setq w3m-search-default-engine "baidu")
 (eval-after-load "w3m-search" '(progn
                                  ; C-u S g RET <search term> RET
-                                 (add-to-list 'w3m-search-engine-alist '("g" "https://www.google.com.hk/search?hl=en&q=%s" utf-8))
-                                 (add-to-list 'w3m-search-engine-alist '("wz" "https://zh.wikipedia.org/wiki/Special:Search?search=%s" utf-8))
-                                 (add-to-list 'w3m-search-engine-alist '("q" "https://www.google.com.hk/search?hl=en&q=%s+site:stackoverflow.com" utf-8))
-                                 (add-to-list 'w3m-search-engine-alist '("s" "https://code.ohloh.net/search?s=%s&browser=Default"  utf-8))
-                                 (add-to-list 'w3m-search-engine-alist '("b" "https://blogsearch.google.com.hk/blogsearch?q=%s" utf-8))
-                                 (add-to-list 'w3m-search-engine-alist '("w" "https://en.wikipedia.org/wiki/Special:Search?search=%s" utf-8))
-                                 (add-to-list 'w3m-search-engine-alist '("d" "https://dictionary.reference.com/search?q=%s" utf-8))
-                                 (add-to-list 'w3m-search-engine-alist '("j" "https://www.google.com.hk/search?ie=UTF-8&oe=UTF-8&sourceid=navclient&btnI=1&q=%s+site:developer.mozilla.org" utf-8))
+					;(add-to-list 'w3m-search-engine-alist '("g" "http://www.google.com.hk/search?hl=en&q=%s" utf-8))
+				 (add-to-list 'w3m-search-engine-alist '("baidu" "http://www.baidu.com/baidu?wd=%s" utf-8))
+                                 (add-to-list 'w3m-search-engine-alist '("wz" "http://zh.wikipedia.org/wiki/Special:Search?search=%s" utf-8))
+                                 (add-to-list 'w3m-search-engine-alist '("q" "http://www.google.com.hk/search?hl=en&q=%s+site:stackoverflow.com" utf-8))
+                                 (add-to-list 'w3m-search-engine-alist '("s" "http://code.ohloh.net/search?s=%s&browser=Default"  utf-8))
+                                 (add-to-list 'w3m-search-engine-alist '("b" "http://blogsearch.google.com.hk/blogsearch?q=%s" utf-8))
+                                 (add-to-list 'w3m-search-engine-alist '("w" "http://en.wikipedia.org/wiki/Special:Search?search=%s" utf-8))
+                                 (add-to-list 'w3m-search-engine-alist '("d" "http://dictionary.reference.com/search?q=%s" utf-8))
+                                 (add-to-list 'w3m-search-engine-alist '("j" "http://www.google.com.hk/search?ie=UTF-8&oe=UTF-8&sourceid=navclient&btnI=1&q=%s+site:developer.mozilla.org" utf-8))
                                  ))
 
 (setq w3m-command-arguments       '("-F" "-cookie")
@@ -65,7 +67,7 @@
                                 (if buffer-file-name
 									(concat "+filetype%3A" (file-name-extension buffer-file-name))
 									"")  ))
-    (browse-url-generic (concat "https://www.google.com.hk/search?hl=en&q="
+    (browse-url-generic (concat "http://www.google.com.hk/search?hl=en&q="
                                 keyword
                                 "+site:stackoverflow.com" ))
     ;; koders.com
@@ -108,7 +110,7 @@
 
 ;;(setq url-proxy-services '(
 ;;			   ("http"."http://192.168.1.105:8086/proxy.pac")
-;;			   ("https"."http://192.168.1.105:8086/proxy.pac")
+;;			   ("http"."http://192.168.1.105:8086/proxy.pac")
 ;;			   ))
 ;;(setq w3m-no-proxy-domains '("local.com" "neighbor.com"))  
 
@@ -119,7 +121,14 @@
 (setq w3m-view-this-url-new-session-in-background t)
 
 ;; 默认显示图片
-;;(setq w3m-default-display-inline-images t)
+(setq w3m-default-display-inline-images t)
 ;;(setq w3m-default-toggle-inline-images t)
+
+(add-hook 'w3m-mode-hook
+	  (lambda()
+	  (define-key w3m-mode-map (kbd "j") 'w3m-previous-buffer)
+	  (define-key w3m-mode-map (kbd "k") 'w3m-next-buffer)
+	  ))
+
 
 (provide 'init-emacs-w3m)

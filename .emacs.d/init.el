@@ -61,6 +61,11 @@
 
 ;;flymake config
 (require 'init-flymake)
+;;emacs flymake config
+;;(require 'init-emacs-flymake)
+
+;;flymake-easy config
+;;(require 'init-flymake-easy)
 
 ;;flycheck config
 (require 'init-flycheck)
@@ -93,6 +98,19 @@
 (idle-require-mode 1) ;; starts loading
 
 
+
+;;config for web mode init
+(require 'init-web-mode)
+
+;;config for 自动插入匹配的括号
+(require 'init-emacs-smartchr)
+
+;;config for js2-mode
+(require 'init-js2-mode)
+
+;;config for rainbow-mode
+;(require 'init-rainbow-mode)
+
 ;;默认路径
 ;;(setq ecb-source-path "~/work/ios/apple/hebtp/hebtp") 
 (custom-set-variables
@@ -100,6 +118,8 @@
  ;; If you edit it by hand, you could mess it up, so be careful.
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
+ '(cua-mode t nil (cua-base))
+ '(display-time-mode t)
  '(ecb-key-map
    (quote
     ("C-c ."
@@ -154,11 +174,13 @@
       (ecb-methods-buffer-name 0.2288135593220339 . 0.29411764705882354)
       (ecb-history-buffer-name 0.2288135593220339 . 0.16176470588235295)))))
  '(ecb-options-version "2.40")
- '(ecb-source-path (quote ("~/work/ios/apple/hebtp/hebtp")))
- '(send-mail-function (quote smtpmail-send-it)))
+ '(ecb-source-path (quote ("~/work/haoJiaoJing/")))
+ '(send-mail-function (quote smtpmail-send-it))
+ '(tool-bar-mode nil))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
  )
+(put 'set-goal-column 'disabled nil)
